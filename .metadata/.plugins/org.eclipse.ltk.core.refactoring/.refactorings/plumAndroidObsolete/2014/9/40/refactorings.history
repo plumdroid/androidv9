@@ -1,0 +1,4 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<session version="1.0">
+<refactoring comment="Move element &apos;PlumDataBase.java&apos; to &apos;Plum/src/plum.webservice.database&apos;&#x0D;&#x0A;- Original project: &apos;plumAndroid&apos;&#x0D;&#x0A;- Destination element: &apos;Plum/src/plum.webservice.database&apos;&#x0D;&#x0A;- Original element: &apos;plum.webservice.database.PlumDataBase.java&apos;&#x0D;&#x0A;- Update references to refactored element" description="Move compilation unit" destination="=Plum/src&lt;plum.webservice.database" element1="/1.0&lt;plum.webservice.database{PlumDataBase.java" files="0" flags="589830" folders="0" id="org.eclipse.jdt.ui.move" patterns="*" policy="org.eclipse.jdt.ui.moveResources" qualified="false" references="true" stamp="1412010233918" units="1" version="1.0"/>
+</session>

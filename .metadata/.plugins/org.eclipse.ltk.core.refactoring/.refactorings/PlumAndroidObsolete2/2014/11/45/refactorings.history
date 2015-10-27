@@ -1,0 +1,4 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<session version="1.0">
+<refactoring comment="Rename type &apos;plum.test.TestPlumWebserviceDataBase&apos; to &apos;TestPlumDataBase&apos;&#x0D;&#x0A;- Original project: &apos;Plum&apos;&#x0D;&#x0A;- Original element: &apos;plum.test.TestPlumWebserviceDataBase&apos;&#x0D;&#x0A;- Renamed element: &apos;plum.test.TestPlumDataBase&apos;&#x0D;&#x0A;- Update references to refactored element&#x0D;&#x0A;- Update textual occurrences in comments and strings" description="Rename type &apos;TestPlumWebserviceDataBase&apos;" flags="589830" id="org.eclipse.jdt.ui.rename.type" input="/src&lt;plum.test{TestPlumWebserviceDataBase.java[TestPlumWebserviceDataBase" matchStrategy="1" name="TestPlumDataBase" qualified="false" references="true" similarDeclarations="false" stamp="1415112334797" textual="false" version="1.0"/>
+</session>
