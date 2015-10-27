@@ -30,4 +30,11 @@
 		<nature>com.android.ide.eclipse.adt.AndroidNature</nature>
 		<nature>org.eclipse.jdt.core.javanature</nature>
 	</natures>
+	<linkedResources>
+		<link>
+			<name>PlumAndroidv1</name>
+			<type>2</type>
+			<location>D:/hubiC/Workspace.Android/androidv9/PlumAndroidv1/PlumAndroidv1</location>
+		</link>
+	</linkedResources>
 </projectDescription>

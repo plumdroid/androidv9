@@ -1,8 +1,7 @@
 <?xml version="1.0" encoding="utf-8"?>
 <manifest xmlns:android="http://schemas.android.com/apk/res/android"
-      package="formation.exemple"
       android:versionCode="1"
-      android:versionName="1.0">
+      android:versionName="1.0" package="formation.exemple.hellomessagedialog">
     <application android:icon="@drawable/icon" android:label="@string/app_name">
         <activity android:name=".HelloMessageDialog"
                   android:label="@string/app_name">

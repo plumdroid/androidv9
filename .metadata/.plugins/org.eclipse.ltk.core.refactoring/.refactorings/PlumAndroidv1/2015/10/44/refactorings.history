@@ -1,0 +1,4 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<session version="1.0">
+<refactoring comment="Rename source folder &apos;PlumAndroidv1/PlumAndroid&apos; to &apos;PlumAndroidv1&apos;&#x0D;&#x0A;- Original project: &apos;PlumAndroidv1&apos;&#x0D;&#x0A;- Original element: &apos;PlumAndroidv1/PlumAndroid&apos;&#x0D;&#x0A;- Renamed element: &apos;PlumAndroid&apos;" description="Rename source folder &apos;PlumAndroid&apos;" id="org.eclipse.jdt.ui.rename.source.folder" input="/PlumAndroid" name="PlumAndroidv1" stamp="1445951557282" version="1.0"/>
+</session>

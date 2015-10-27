@@ -1,7 +1,0 @@
-<?xml version="1.0" encoding="utf-8"?>
-<resources>
-    <string name="hello">Hello World, HelloPlumWebServiceDataBase!</string>
-    <string name="app_name">HelloPlumWebServiceDataBase</string>
-    <string name="app_ajout">HelloPlumWebServiceDataBase : Ajouter</string>
-    <string name="app_modsup">HelloPlumWebServiceDataBase : Modifier/Supprimer</string>
-</resources>
