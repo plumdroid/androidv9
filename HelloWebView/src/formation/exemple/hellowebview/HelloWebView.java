@@ -10,7 +10,11 @@ public class HelloWebView extends Activity {
 	
 	   WebView  mWebView = (WebView) findViewById(R.id.webview);
 	    mWebView.getSettings().setJavaScriptEnabled(true);
-	    //http://www.google.comhttp://10.0.2.2/plumwebservice/plumWebServiceDataBase.php
-	    mWebView.loadUrl("http://10.0.2.2/plumwebservice/plumWebServiceDataBase.php");
+	    String url;
+	    //url="www.google.com";
+	    //url="http://10.0.2.2/plum/plum.webservice/PlumWebServiceDb/www/";
+	    url="http://10.0.2.2/plum/plum.webservice/PlumWebServiceDb/www/e/debug.norest/";
+	    mWebView.loadUrl(url);
+	   
 }
 }
