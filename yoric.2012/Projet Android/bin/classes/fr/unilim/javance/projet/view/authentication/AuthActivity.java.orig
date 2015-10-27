@@ -1,0 +1,113 @@
+package fr.unilim.javance.projet.view.authentication;
+
+import java.io.IOException;
+import java.util.ArrayList;
+import java.util.List;
+
+import org.apache.http.NameValuePair;
+import org.apache.http.client.ClientProtocolException;
+import org.apache.http.message.BasicNameValuePair;
+import org.json.JSONException;
+import org.json.JSONObject;
+
+import fr.unilim.javance.projet.authentication.GoogleAccountHandler;
+import fr.unilim.javance.projet.httpconnection.HttpConnection;
+import fr.unilim.javance.projet.internal.Backend;
+import fr.unilim.javance.projet.internal.TodoManagerFactory;
+import fr.unilim.javance.projet.model.gtasks.GTasksTodoManager;
+
+import android.accounts.AccountManager;
+import android.app.Activity;
+import android.os.Bundle;
+import android.webkit.WebView;
+
+
+public class AuthActivity extends Activity implements AuthResults {
+	private String client_id     = "191209633418.apps.googleusercontent.com";
+	private String client_secret = "L6CKsC0XSVlRo1q7KfFbOa43";
+	private String redirect_uri  = "urn:ietf:wg:oauth:2.0:oob";
+	private String scope         = "https://www.googleapis.com/auth/tasks";
+	        
+	/** Called when the activity is first created. */
+	public void onCreate(Bundle savedInstanceState) {
+		super.onCreate(savedInstanceState);
+		
+		if(!GoogleAccountHandler.haveAccount(this)) {
+			AccountManager manager = AccountManager.get(this);
+			manager.addAccount("com.google", "oauth2:https://www.googleapis.com/auth/tasks", 
+					null, null, this, null, null);
+			
+			/*
+			String response_type = "code";
+			
+			String url = "https://accounts.google.com/o/oauth2/auth?client_id=" + client_id 
+					+ "&redirect_uri=" + redirect_uri 
+					+ "&scope=" + scope 
+					+ "&response_type=" + response_type;
+			
+			WebView wv = new WebView(this);
+		    wv.getSettings().setJavaScriptEnabled(true); // Enable JavaScript.
+			wv.setWebViewClient(new AuthWebViewClient(this));
+			wv.loadUrl(url);
+			
+			setContentView(wv);
+			/**/
+		} else {
+			GoogleAccountHandler gaHandler = new GoogleAccountHandler(this);
+		}
+	}
+
+	/**
+	 * This function is called when the user has refused  the authentication.
+	 * The GTasks manager is warned that the authentication failed
+	 */
+	public void authenticationRefused() {
+		GTasksTodoManager gtasksManager = (GTasksTodoManager) TodoManagerFactory.getTodoManager(Backend.GTASKS);
+		gtasksManager.setAuthenticationStatus(false);
+		finish();
+	}
+
+	/**
+	 * This function, called when the user has agreed the authentication, try
+	 * to get the authentication token and other information. After that, the
+	 * GTasks manager is warned that the authentication was successful.
+	 * 
+	 * @param code the result code given by google in the WebView
+	 */
+	public void authenticationSuccessful(String code) {
+		List<NameValuePair> infos = new ArrayList<NameValuePair>(2);
+		
+		try {
+			infos.clear();
+			infos.add(new BasicNameValuePair("client_id", this.client_id));
+			infos.add(new BasicNameValuePair("client_secret", this.client_secret));
+			infos.add(new BasicNameValuePair("code", code));
+			infos.add(new BasicNameValuePair("redirect_uri", this.redirect_uri));
+			infos.add(new BasicNameValuePair("grant_type", "authorization_code"));
+			String retour = HttpConnection.sendURL("POST", "https://accounts.google.com/o/oauth2/token", infos);
+			
+			JSONObject jObject   = new JSONObject(retour);
+			String token         = jObject.getString("access_token");
+			String token_type    = jObject.getString("token_type");
+			String expires_in    = jObject.getString("expires_in");
+			String refresh_token = jObject.getString("refresh_token");
+			
+			GTasksTodoManager gtasksManager = (GTasksTodoManager) TodoManagerFactory.getTodoManager(Backend.GTASKS);
+			gtasksManager.setInfosToken(token, token_type, expires_in, refresh_token);
+			gtasksManager.setAuthenticationStatus(true);
+			
+		} catch (ClientProtocolException e) {
+			// TODO Auto-generated catch block
+			e.printStackTrace();
+		} catch (IOException e) {
+			// TODO Auto-generated catch block
+			e.printStackTrace();
+		} catch (JSONException e) {
+			// TODO Auto-generated catch block
+			e.printStackTrace();
+		}
+		finally {
+			finish();
+		}
+	}
+}

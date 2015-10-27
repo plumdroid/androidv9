@@ -1,0 +1,145 @@
+package fr.unilim.javance.projet.sync;
+
+import fr.unilim.javance.projet.model.gtasks.cache.GTasksSQLite;
+import android.content.ContentProvider;
+import android.content.ContentResolver;
+import android.content.ContentValues;
+import android.content.UriMatcher;
+import android.database.Cursor;
+import android.database.sqlite.SQLiteDatabase;
+import android.database.sqlite.SQLiteQueryBuilder;
+import android.net.Uri;
+import android.text.TextUtils;
+import android.util.Log;
+
+public class GTasksContentProvider extends ContentProvider {
+	private GTasksSQLite bdd;
+	private static final String TAG = "GTasksContentProvider";
+	
+	//private static final String AUTHORITY = "fr.unilim.javance.projet.model.gtasks.cache.GTasksContentProvider";
+	private static final String AUTHORITY = "fr.unilim.javance.projet.sync.GTasksContentProvider";
+	public static final int FOLDER = 100;
+	public static final int FOLDER_ID = 110;
+	public static final int TASK = 200;
+	public static final int TASK_ID = 210;
+	 
+	private static final String FOLDER_BASE_PATH = "folder";
+	private static final String TASK_BASE_PATH = "task";
+	
+	public static final Uri FOLDER_CONTENT_URI = Uri.parse("content://" + AUTHORITY + "/" + FOLDER_BASE_PATH);
+	public static final Uri TASK_CONTENT_URI = Uri.parse("content://" + AUTHORITY + "/" + TASK_BASE_PATH);
+	
+	/*public static final String CONTENT_ITEM_TYPE = ContentResolver.CURSOR_ITEM_BASE_TYPE
+	        + "/mt-tutorial";
+	public static final String CONTENT_TYPE = ContentResolver.CURSOR_DIR_BASE_TYPE
+	        + "/mt-tutorial";*/
+	
+	private static final UriMatcher sURIMatcher = new UriMatcher(UriMatcher.NO_MATCH);
+	static {
+	    sURIMatcher.addURI(AUTHORITY, FOLDER_BASE_PATH, FOLDER);
+	    sURIMatcher.addURI(AUTHORITY, FOLDER_BASE_PATH + "/#", FOLDER_ID);
+	    
+	    sURIMatcher.addURI(AUTHORITY, TASK_BASE_PATH, TASK);
+	    sURIMatcher.addURI(AUTHORITY, TASK_BASE_PATH + "/#", TASK_ID);
+	}
+	
+
+	@Override
+	public boolean onCreate() {
+		bdd = new GTasksSQLite(getContext());
+		
+		Log.e(TAG, "ContentProvider created");
+		
+		return true;
+	}
+
+	@Override
+	public int delete(Uri uri, String selection, String[] selectionArgs) {
+		int uriType = sURIMatcher.match(uri);
+		SQLiteDatabase sqlDB = bdd.getWritableDatabase();
+		int rowsAffected = 0;
+		String id;
+		
+		switch (uriType) {
+			case FOLDER:
+				rowsAffected = sqlDB.delete(GTasksSQLite.TABLE_FOLDER, selection, selectionArgs);
+				break;
+			case FOLDER_ID:
+				id = uri.getLastPathSegment();
+				if (TextUtils.isEmpty(selection)) {
+					rowsAffected = sqlDB.delete(GTasksSQLite.TABLE_FOLDER, GTasksSQLite.FOLDER_ID + "=" + id, null);
+				}
+				else {
+					rowsAffected = sqlDB.delete(GTasksSQLite.TABLE_FOLDER, selection + " and " + GTasksSQLite.FOLDER_ID + "=" + id, selectionArgs);
+				}
+				break;
+			case TASK:
+				rowsAffected = sqlDB.delete(GTasksSQLite.TABLE_TASK, selection, selectionArgs);
+				break;
+			case TASK_ID:
+				id = uri.getLastPathSegment();
+				if (TextUtils.isEmpty(selection)) {
+					rowsAffected = sqlDB.delete(GTasksSQLite.TABLE_TASK, GTasksSQLite.TASK_ID + "=" + id, null);
+				}
+				else {
+					rowsAffected = sqlDB.delete(GTasksSQLite.TABLE_TASK, selection + " and " + GTasksSQLite.TASK_ID + "=" + id, selectionArgs);
+				}
+				break;
+			default:
+			throw new IllegalArgumentException("Unknown or Invalid URI " + uri);
+		}
+		getContext().getContentResolver().notifyChange(uri, null);
+		return rowsAffected;
+	}
+
+	@Override
+	public String getType(Uri arg0) {
+		// TODO Auto-generated method stub
+		return null;
+	}
+
+	@Override
+	public Uri insert(Uri arg0, ContentValues arg1) {
+		// TODO Auto-generated method stub
+		return null;
+	}
+
+	@Override
+	public Cursor query(Uri uri, String[] projection, String selection, String[] selectionArgs, String sortOrder) {
+		SQLiteQueryBuilder queryBuilder = new SQLiteQueryBuilder();
+		
+		int uriType = sURIMatcher.match(uri);
+		switch (uriType) {
+			case FOLDER_ID:
+				queryBuilder.setTables(GTasksSQLite.TABLE_FOLDER);
+				queryBuilder.appendWhere(GTasksSQLite.FOLDER_ID + "=" + uri.getLastPathSegment());
+				break;
+			case TASK_ID:
+				queryBuilder.setTables(GTasksSQLite.TABLE_TASK);
+				queryBuilder.appendWhere(GTasksSQLite.TASK_ID + "=" + uri.getLastPathSegment());
+				break;
+			case FOLDER:
+				queryBuilder.setTables(GTasksSQLite.TABLE_FOLDER);
+				// no filter
+				break;
+			case TASK:
+				queryBuilder.setTables(GTasksSQLite.TABLE_TASK);
+				// no filter
+				break;
+			default:
+				throw new IllegalArgumentException("Unknown URI");
+		}
+		
+		Cursor cursor = queryBuilder.query(bdd.getReadableDatabase(),
+				projection, selection, selectionArgs, null, null, sortOrder);
+		cursor.setNotificationUri(getContext().getContentResolver(), uri);
+		return cursor;
+	}
+
+	@Override
+	public int update(Uri arg0, ContentValues arg1, String arg2, String[] arg3) {
+		// TODO Auto-generated method stub
+		return 0;
+	}
+
+}

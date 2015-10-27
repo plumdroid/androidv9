@@ -1,0 +1,221 @@
+package fr.unilim.javance.projet.model.gtasks;
+
+import java.io.IOException;
+import java.util.ArrayList;
+import java.util.HashSet;
+import java.util.List;
+import java.util.Set;
+
+import org.apache.http.NameValuePair;
+import org.apache.http.client.ClientProtocolException;
+import org.apache.http.message.BasicNameValuePair;
+import org.json.JSONArray;
+import org.json.JSONException;
+import org.json.JSONObject;
+
+import android.content.Context;
+import android.content.Intent;
+import android.database.sqlite.SQLiteDatabase;
+
+import fr.unilim.javance.projet.httpconnection.HttpConnection;
+import fr.unilim.javance.projet.internal.Folder;
+import fr.unilim.javance.projet.internal.Task;
+import fr.unilim.javance.projet.internal.TodoListener;
+import fr.unilim.javance.projet.internal.TodoManager;
+import fr.unilim.javance.projet.model.gtasks.cache.GTasksSQLite;
+import fr.unilim.javance.projet.model.mock.cache.MockFolderCache;
+import fr.unilim.javance.projet.view.authentication.AuthActivity;
+
+/**
+ * A <code>Google Tasks</code> implementation
+ * 
+ * @author Yorick Lesecque
+ * @author Thibault Desmoulins
+ */
+public class GTasksTodoManager implements TodoManager {
+	private ArrayList<TodoListener> listeners;
+	private Boolean authenticationStatus = false;
+
+	private String api_key       = "AIzaSyCoelG8Wjt0tuuwVrUG9ATIkyQiIWAkQzc";
+	
+	private String token         = "";
+	private String token_type    = "";
+	private String expires_in    = "";
+	private String refresh_token = "";
+	
+	//private SQLiteDatabase bdd;
+	
+	/**
+	 * Default constructor
+	 * 
+	 * Initialize the listeners list.
+	 */
+	public GTasksTodoManager() {
+		this.listeners = new ArrayList<TodoListener>();
+	}
+	
+	/**
+	 * Launch the authentication process to access the backend
+	 * 
+	 * Call: <code>onAuthenticationRequest</code> and
+	 *       <code>onAuthenticationStatusChanged</code>
+	 */
+	public void launchAuthenticationProcess(Context c) {
+		
+		// Launch the database
+		//bdd = new GTasksSQLite(c, "gtasks_bdd.db", null, 1).getWritableDatabase();
+		
+		
+		Intent i = new Intent(c, AuthActivity.class);
+
+		// Send the Intent to listeners
+		for (TodoListener listener : this.listeners) {
+			listener.onAuthenticationRequest(i);
+		}
+	}
+
+	/**
+	 * Get the authentication status
+	 * 
+	 * Call: <code>onAuthenticationStatusChanged</code>
+	 */
+	public void getAuthenticationStatus() {
+		for (TodoListener listener : this.listeners) {
+			listener.onAuthenticationStatusChanged(authenticationStatus);
+		}
+	}
+
+	/**
+	 * Get a folder by id
+	 * 
+	 * Call: <code>onGetFolder</code>
+	 * 
+	 * @param id the folder id to find
+	 * @throws IllegalArgumentException if the parameter is <code>null</code>
+	 */
+	public void getFolder(String id) {	
+		Folder result = null;
+		
+		// id parameter cannot be null
+		if (id == null) {
+			throw new IllegalArgumentException("id parameter cannot be null");
+		}
+		
+		// Get the Folder instance from the database
+		for (Folder folder: MockFolderCache.getInstance().getCollection()) {
+			if (folder.getId().equals(id)) {
+				result = (Folder) folder.clone();
+				break;
+			}
+		}
+		
+		// Notify listeners
+		for (TodoListener listener : this.listeners) {
+			listener.onGetFolder(result);
+		}
+	}
+
+	public void getAllFolders() {
+		Set<Folder> folders = new HashSet<Folder>();
+		
+		List<NameValuePair> infos = new ArrayList<NameValuePair>(2);
+		infos.add(new BasicNameValuePair("Authorization", "OAuth "+token));
+		infos.add(new BasicNameValuePair("X-JavaScript-User-Agent", "Google APIs Explorer google-api-gwt-client/0.1-alpha"));
+		
+		try {
+			String retour = HttpConnection.sendURL("GET", "https://www.googleapis.com/tasks/v1/users/@me/lists?pp=1&key="+api_key, infos);
+
+			JSONObject jObject = new JSONObject(retour);
+			JSONArray items    = jObject.getJSONArray("items");
+			
+			int taille = items.length();
+			
+			for(int i=0 ; i<taille ; i++) {
+				JSONObject jo = items.getJSONObject(i);
+				
+				Folder f = new Folder();
+				f.setId(jo.getString("id"));
+				f.setName(jo.getString("title"));
+				
+				folders.add(f);
+			}
+			
+			for (TodoListener listener : this.listeners) {
+				listener.onGetAllFolders(folders);
+			}
+		} catch (ClientProtocolException e) {
+			// TODO Auto-generated catch block
+			e.printStackTrace();
+		} catch (IOException e) {
+			// TODO Auto-generated catch block
+			e.printStackTrace();
+		} catch (JSONException e) {
+			// TODO Auto-generated catch block
+			e.printStackTrace();
+		}
+	}
+
+	public void fillFolder(Folder folder) {
+		// TODO Auto-generated method stub
+		
+	}
+
+	public void deleteFolder(Folder folder) {
+		// TODO Auto-generated method stub
+		
+	}
+
+	public void getTask(String id) {
+		// TODO Auto-generated method stub
+		
+	}
+
+	public void createTask(Folder folder, Task task) {
+		
+	}
+
+	public void updateTask(Task task) {
+		// TODO Auto-generated method stub
+		
+	}
+
+	public void deleteTask(String id) {
+		// TODO Auto-generated method stub
+		
+	}
+
+	/**
+	 * Register a new listener
+	 * 
+	 * @param listener the listener to add
+	 */
+	public void registerListener(TodoListener listener) {
+		this.listeners.add(listener);
+	}
+	
+	/**
+	 * Remove a listener
+	 * 
+	 * @param listener the listener to remove
+	 */
+	public void removeListener(TodoListener listener) {
+		this.listeners.remove(listener);
+	}
+	
+	
+	
+	
+	public void setAuthenticationStatus(Boolean status) {
+		authenticationStatus = status;
+		
+		// The authentication status has changed, all the listeners has to be prevent
+		getAuthenticationStatus();
+	}
+	
+	public void setInfosToken(String token, String token_type, String expires_in, String refresh_token) {
+		this.token         = token;
+		this.token_type    = token_type;
+		this.expires_in    = expires_in;
+		this.refresh_token = refresh_token;
+	}
+}

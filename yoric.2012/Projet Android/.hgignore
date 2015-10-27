@@ -1,0 +1,7 @@
+syntax: glob
+bin
+gen/*
+.DS_Store
+.metadata
+.settings
+*~

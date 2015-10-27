@@ -1,0 +1,54 @@
+package fr.unilim.javance.projet.model.gtasks.cache;
+
+import android.content.Context;
+import android.database.sqlite.SQLiteDatabase;
+import android.database.sqlite.SQLiteOpenHelper;
+ 
+public class GTasksSQLite extends SQLiteOpenHelper {
+	
+	private static final String DB_NAME = "gtasks_bdd";
+	private static final int DB_VERSION = 1;
+ 
+	public static final String TABLE_FOLDER = "folder";
+	public static final String TABLE_TASK = "task";
+ 
+	public static final String FOLDER_ID = "ID";
+	public static final String TASK_ID   = "ID";
+	
+	private static final String CREATE_TABLE_FOLDER = "CREATE TABLE " + TABLE_FOLDER + " (" +
+			FOLDER_ID +" TEXT PRIMARY KEY NOT NULL," +
+			"NAME TEXT NOT NULL" +
+		");";
+	 
+	private static final String CREATE_TABLE_TASK = "CREATE TABLE " + TABLE_TASK + " (" +
+			TASK_ID + " TEXT PRIMARY KEY NOT NULL," +
+			"TITLE TEXT NOT NULL" +
+			"DESCRIPTION TEXT NOT NULL" +
+			"ENCRYPTED_DATE TEXT NOT NULL" +
+			"CREATION_DATE DATE NOT NULL" +
+			"DUE_DATE DATE NOT NULL" +
+			"STATUS TEXT NOT NULL" +
+			"ADDRESS TEXT NOT NULL" +
+			"ID_FOLDER_PARENT TEXT NOT NULL" +
+		");";
+ 
+	public GTasksSQLite(Context context) {
+		super(context, DB_NAME, null, DB_VERSION);
+	}
+ 
+	@Override
+	public void onCreate(SQLiteDatabase db) {
+		// Creation of the database
+		db.execSQL(CREATE_TABLE_FOLDER);
+		db.execSQL(CREATE_TABLE_TASK);
+	}
+ 
+	@Override
+	public void onUpgrade(SQLiteDatabase db, int oldVersion, int newVersion) {
+		// Delete every table of the database and create a new one
+		db.execSQL("DROP TABLE IF EXISTS " + TABLE_FOLDER + ";");
+		db.execSQL("DROP TABLE IF EXISTS " + TABLE_TASK + ";");
+		onCreate(db);
+	}
+ 
+}

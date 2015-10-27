@@ -1,0 +1,47 @@
+<?xml version="1.0" encoding="utf-8"?>
+ <LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
+              android:layout_width="fill_parent" 
+              android:layout_height="wrap_content" 
+                android:background="#80FF00"
+              android:orientation="vertical" >             
+         <LinearLayout
+		      android:orientation="vertical"
+		      android:layout_width="fill_parent"
+		      android:layout_height="fill_parent"
+		      android:layout_weight="1"> 
+        <ListView
+        android:id="@android:id/list"
+        android:layout_width="fill_parent"
+        android:layout_height="fill_parent" 
+         />
+          </LinearLayout>
+         <RelativeLayout xmlns:android="http://schemas.android.com/apk/res/android"
+   			android:layout_width="fill_parent"
+    		android:layout_height="wrap_content"
+    		 android:background="#40A468"
+     		android:padding="10px" >
+         <Button
+    	android:id="@+id/mclose"
+        android:layout_width="80dip"
+        android:layout_height="wrap_content"
+         android:layout_alignParentRight="true"
+        android:text="Fermer" />
+        <Button
+        android:id="@+id/mtri"
+        android:layout_width="80dip"
+        android:layout_height="wrap_content"
+        android:layout_toLeftOf="@id/mclose"
+        android:layout_alignTop="@id/mclose"
+        android:layout_marginLeft="10dip"
+        android:layout_marginRight="10dip"
+        android:text="Par prix" />
+         <Button
+        android:id="@+id/madd"
+        android:layout_width="120dip"
+        android:layout_height="wrap_content"
+        android:layout_toLeftOf="@id/mtri"
+        android:layout_alignTop="@id/mtri"
+        android:layout_marginLeft="10dip"
+        android:text="Ajouter" />
+      </RelativeLayout>
+ </LinearLayout>

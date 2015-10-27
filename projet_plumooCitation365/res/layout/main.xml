@@ -1,0 +1,92 @@
+<?xml version="1.0" encoding="utf-8"?>
+ <LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
+                android:layout_width="match_parent"
+    			android:layout_height="match_parent"
+                android:background="#80FF00"
+              android:orientation="vertical"
+              >  
+ 			<ScrollView
+            android:layout_width="fill_parent"
+            android:layout_height="wrap_content">
+ 	<LinearLayout 
+                android:layout_width="match_parent"
+    			android:layout_height="match_parent"
+              android:orientation="vertical">
+     <TextView
+        android:id="@+id/lbldate"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:textColor="#000000"
+        android:text="Date parution"/>
+        <TextView
+        android:id="@+id/txtdate"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:textColor="#000000"
+        android:background="@android:drawable/editbox_background"
+       />
+       <TextView
+        android:id="@+id/lbltitre"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:textColor="#000000"
+        android:text="Titre" />
+        <TextView
+        android:id="@+id/txttitre"
+        android:layout_width="fill_parent"
+        android:layout_height="wrap_content"
+        android:textColor="#000000"
+        android:background="@android:drawable/editbox_background"
+       />
+        <TextView
+        android:id="@+id/lblcitation"
+         android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:textColor="#000000"
+        android:text="Citation"/>
+        <TextView
+        android:id="@+id/txtcitation"
+        android:layout_width="fill_parent"
+        android:layout_height="wrap_content"
+         android:textColor="#000000"
+        android:background="@android:drawable/editbox_background"
+       />
+        <TextView
+        android:id="@+id/lblouvrage"
+         android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:textColor="#000000"
+        android:text="Ouvrage"/>
+        <TextView
+        android:id="@+id/txtouvrage"
+        android:layout_width="fill_parent"
+        android:layout_height="wrap_content"
+        android:textColor="#000000"
+        android:background="@android:drawable/editbox_background"
+       />
+        <TextView
+        android:id="@+id/lblauteur"
+         android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:textColor="#000000"
+        android:text="Auteur"/>
+        <TextView
+        android:id="@+id/txtauteur"
+        android:layout_width="fill_parent"
+        android:layout_height="wrap_content"
+        android:textColor="#000000"
+        android:background="@android:drawable/editbox_background"
+       />
+    <Button
+        android:id="@+id/btnall"
+         android:layout_width="fill_parent"
+        android:layout_height="wrap_content"
+        android:text="Toutes les citations" />
+   </LinearLayout>
+  
+  </ScrollView>   
+
+  </LinearLayout>
+
+
+

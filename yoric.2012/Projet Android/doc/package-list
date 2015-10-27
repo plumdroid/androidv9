@@ -1,0 +1,10 @@
+fr.unilim.javance.projet
+fr.unilim.javance.projet.authentication
+fr.unilim.javance.projet.httpconnection
+fr.unilim.javance.projet.internal
+fr.unilim.javance.projet.model.gtasks
+fr.unilim.javance.projet.model.gtasks.cache
+fr.unilim.javance.projet.model.mock
+fr.unilim.javance.projet.model.mock.cache
+fr.unilim.javance.projet.sync
+fr.unilim.javance.projet.view.authentication

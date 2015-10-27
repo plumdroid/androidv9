@@ -7070,3 +7070,266 @@ org.eclipse.core.runtime.CoreException: 'aapt' error. Pre Compiler Build aborted
 
 !ENTRY com.android.ide.eclipse.adt 4 0 2015-10-27 14:11:45.253
 !MESSAGE Failed to load properties file for project 'PlumAndroidv1'
+
+!ENTRY com.android.ide.eclipse.adt 4 0 2015-10-27 15:44:12.905
+!MESSAGE Failed to load properties file for project 'projet-java-avance-2011'
+
+!ENTRY com.android.ide.eclipse.adt 4 0 2015-10-27 15:44:12.964
+!MESSAGE Failed to load properties file for project 'projet-java-avance-2011'
+
+!ENTRY com.android.ide.eclipse.adt 4 0 2015-10-27 15:44:14.044
+!MESSAGE Failed to load properties file for project 'projet-java-avance-2011'
+
+!ENTRY com.android.ide.eclipse.adt 4 0 2015-10-27 15:44:14.075
+!MESSAGE Failed to load properties file for project 'projet-java-avance-2011'
+
+!ENTRY com.android.ide.eclipse.adt 4 0 2015-10-27 15:44:25.333
+!MESSAGE Failed to load properties file for project 'projet-java-avance-2011'
+
+!ENTRY org.eclipse.core.resources 8 2 2015-10-27 15:44:25.337
+!MESSAGE Problems occurred when invoking code from plug-in: "org.eclipse.core.resources".
+!STACK 1
+org.eclipse.core.runtime.CoreException: Project target not resolved yet.
+	at com.android.ide.eclipse.adt.internal.build.builders.BaseBuilder.stopBuild(Unknown Source)
+	at com.android.ide.eclipse.adt.internal.build.builders.BaseBuilder.abortOnBadSetup(Unknown Source)
+	at com.android.ide.eclipse.adt.internal.build.builders.ResourceManagerBuilder.build(Unknown Source)
+	at org.eclipse.core.internal.events.BuildManager$2.run(BuildManager.java:733)
+	at org.eclipse.core.runtime.SafeRunner.run(SafeRunner.java:42)
+	at org.eclipse.core.internal.events.BuildManager.basicBuild(BuildManager.java:206)
+	at org.eclipse.core.internal.events.BuildManager.basicBuild(BuildManager.java:246)
+	at org.eclipse.core.internal.events.BuildManager$1.run(BuildManager.java:299)
+	at org.eclipse.core.runtime.SafeRunner.run(SafeRunner.java:42)
+	at org.eclipse.core.internal.events.BuildManager.basicBuild(BuildManager.java:302)
+	at org.eclipse.core.internal.events.BuildManager.basicBuildLoop(BuildManager.java:358)
+	at org.eclipse.core.internal.events.BuildManager.build(BuildManager.java:381)
+	at org.eclipse.core.internal.events.AutoBuildJob.doBuild(AutoBuildJob.java:143)
+	at org.eclipse.core.internal.events.AutoBuildJob.run(AutoBuildJob.java:241)
+	at org.eclipse.core.internal.jobs.Worker.run(Worker.java:53)
+!SUBENTRY 1 com.android.ide.eclipse.adt 8 0 2015-10-27 15:44:25.337
+!MESSAGE Project target not resolved yet.
+!SUBENTRY 1 com.android.ide.eclipse.adt 8 0 2015-10-27 15:44:25.337
+!MESSAGE Project target not resolved yet.
+
+!ENTRY com.android.ide.eclipse.adt 4 0 2015-10-27 15:44:25.344
+!MESSAGE Failed to load properties file for project 'projet-java-avance-2011'
+
+!ENTRY com.android.ide.eclipse.adt 4 0 2015-10-27 15:44:25.754
+!MESSAGE Failed to load properties file for project 'projet-java-avance-2011'
+
+!ENTRY com.android.ide.eclipse.adt 4 0 2015-10-27 15:44:26.626
+!MESSAGE Failed to load properties file for project 'projet-java-avance-2011'
+
+!ENTRY com.android.ide.eclipse.adt 4 0 2015-10-27 15:44:26.826
+!MESSAGE Failed to load properties file for project 'projet-java-avance-2011'
+
+!ENTRY org.eclipse.core.resources 8 2 2015-10-27 15:44:26.836
+!MESSAGE Problems occurred when invoking code from plug-in: "org.eclipse.core.resources".
+!STACK 1
+org.eclipse.core.runtime.CoreException: Project target not resolved yet.
+	at com.android.ide.eclipse.adt.internal.build.builders.BaseBuilder.stopBuild(Unknown Source)
+	at com.android.ide.eclipse.adt.internal.build.builders.BaseBuilder.abortOnBadSetup(Unknown Source)
+	at com.android.ide.eclipse.adt.internal.build.builders.ResourceManagerBuilder.build(Unknown Source)
+	at org.eclipse.core.internal.events.BuildManager$2.run(BuildManager.java:733)
+	at org.eclipse.core.runtime.SafeRunner.run(SafeRunner.java:42)
+	at org.eclipse.core.internal.events.BuildManager.basicBuild(BuildManager.java:206)
+	at org.eclipse.core.internal.events.BuildManager.basicBuild(BuildManager.java:246)
+	at org.eclipse.core.internal.events.BuildManager$1.run(BuildManager.java:299)
+	at org.eclipse.core.runtime.SafeRunner.run(SafeRunner.java:42)
+	at org.eclipse.core.internal.events.BuildManager.basicBuild(BuildManager.java:302)
+	at org.eclipse.core.internal.events.BuildManager.basicBuildLoop(BuildManager.java:358)
+	at org.eclipse.core.internal.events.BuildManager.build(BuildManager.java:381)
+	at org.eclipse.core.internal.events.AutoBuildJob.doBuild(AutoBuildJob.java:143)
+	at org.eclipse.core.internal.events.AutoBuildJob.run(AutoBuildJob.java:241)
+	at org.eclipse.core.internal.jobs.Worker.run(Worker.java:53)
+!SUBENTRY 1 com.android.ide.eclipse.adt 8 0 2015-10-27 15:44:26.836
+!MESSAGE Project target not resolved yet.
+!SUBENTRY 1 com.android.ide.eclipse.adt 8 0 2015-10-27 15:44:26.836
+!MESSAGE Project target not resolved yet.
+
+!ENTRY com.android.ide.eclipse.adt 4 0 2015-10-27 15:44:26.843
+!MESSAGE Failed to load properties file for project 'projet-java-avance-2011'
+
+!ENTRY com.android.ide.eclipse.adt 4 0 2015-10-27 15:44:27.150
+!MESSAGE Failed to load properties file for project 'projet-java-avance-2011'
+
+!ENTRY org.eclipse.jdt.core 4 4 2015-10-27 15:45:57.077
+!MESSAGE JavaBuilder handling ImageBuilderInternalException while building: HelloAndroid
+!STACK 1
+org.eclipse.core.internal.resources.ResourceException: A resource exists with a different case: '/HelloAndroid/bin/formation/exemple/HelloAndroid'.
+	at org.eclipse.core.internal.resources.Resource.checkDoesNotExist(Resource.java:329)
+	at org.eclipse.core.internal.resources.Resource.checkDoesNotExist(Resource.java:307)
+	at org.eclipse.core.internal.resources.Folder.assertCreateRequirements(Folder.java:30)
+	at org.eclipse.core.internal.resources.Folder.create(Folder.java:95)
+	at org.eclipse.jdt.internal.core.builder.AbstractImageBuilder.createFolder(AbstractImageBuilder.java:471)
+	at org.eclipse.jdt.internal.core.builder.AbstractImageBuilder$1.visit(AbstractImageBuilder.java:255)
+	at org.eclipse.core.internal.resources.Resource$1.visitElement(Resource.java:85)
+	at org.eclipse.core.internal.watson.ElementTreeIterator.doIteration(ElementTreeIterator.java:82)
+	at org.eclipse.core.internal.watson.ElementTreeIterator.doIteration(ElementTreeIterator.java:86)
+	at org.eclipse.core.internal.watson.ElementTreeIterator.doIteration(ElementTreeIterator.java:86)
+	at org.eclipse.core.internal.watson.ElementTreeIterator.doIteration(ElementTreeIterator.java:86)
+	at org.eclipse.core.internal.watson.ElementTreeIterator.iterate(ElementTreeIterator.java:127)
+	at org.eclipse.core.internal.resources.Resource.accept(Resource.java:95)
+	at org.eclipse.core.internal.resources.Resource.accept(Resource.java:52)
+	at org.eclipse.jdt.internal.core.builder.AbstractImageBuilder.addAllSourceFiles(AbstractImageBuilder.java:220)
+	at org.eclipse.jdt.internal.core.builder.BatchImageBuilder.build(BatchImageBuilder.java:51)
+	at org.eclipse.jdt.internal.core.builder.JavaBuilder.buildAll(JavaBuilder.java:254)
+	at org.eclipse.jdt.internal.core.builder.JavaBuilder.buildDeltas(JavaBuilder.java:270)
+	at org.eclipse.jdt.internal.core.builder.JavaBuilder.build(JavaBuilder.java:193)
+	at org.eclipse.core.internal.events.BuildManager$2.run(BuildManager.java:733)
+	at org.eclipse.core.runtime.SafeRunner.run(SafeRunner.java:42)
+	at org.eclipse.core.internal.events.BuildManager.basicBuild(BuildManager.java:206)
+	at org.eclipse.core.internal.events.BuildManager.basicBuild(BuildManager.java:246)
+	at org.eclipse.core.internal.events.BuildManager$1.run(BuildManager.java:299)
+	at org.eclipse.core.runtime.SafeRunner.run(SafeRunner.java:42)
+	at org.eclipse.core.internal.events.BuildManager.basicBuild(BuildManager.java:302)
+	at org.eclipse.core.internal.events.BuildManager.basicBuildLoop(BuildManager.java:358)
+	at org.eclipse.core.internal.events.BuildManager.build(BuildManager.java:381)
+	at org.eclipse.core.internal.events.AutoBuildJob.doBuild(AutoBuildJob.java:143)
+	at org.eclipse.core.internal.events.AutoBuildJob.run(AutoBuildJob.java:241)
+	at org.eclipse.core.internal.jobs.Worker.run(Worker.java:53)
+!SUBENTRY 1 org.eclipse.core.resources 4 275 2015-10-27 15:45:57.078
+!MESSAGE A resource exists with a different case: '/HelloAndroid/bin/formation/exemple/HelloAndroid'.
+
+!ENTRY org.eclipse.jdt.core 4 4 2015-10-27 15:46:47.422
+!MESSAGE JavaBuilder handling ImageBuilderInternalException while building: HelloAndroid
+!STACK 1
+org.eclipse.core.internal.resources.ResourceException: A resource exists with a different case: '/HelloAndroid/bin/formation/exemple/helloAndroid'.
+	at org.eclipse.core.internal.resources.Resource.checkDoesNotExist(Resource.java:329)
+	at org.eclipse.core.internal.resources.Resource.checkDoesNotExist(Resource.java:307)
+	at org.eclipse.core.internal.resources.Folder.assertCreateRequirements(Folder.java:30)
+	at org.eclipse.core.internal.resources.Folder.create(Folder.java:95)
+	at org.eclipse.jdt.internal.core.builder.AbstractImageBuilder.createFolder(AbstractImageBuilder.java:471)
+	at org.eclipse.jdt.internal.core.builder.AbstractImageBuilder$1.visit(AbstractImageBuilder.java:255)
+	at org.eclipse.core.internal.resources.Resource$1.visitElement(Resource.java:85)
+	at org.eclipse.core.internal.watson.ElementTreeIterator.doIteration(ElementTreeIterator.java:82)
+	at org.eclipse.core.internal.watson.ElementTreeIterator.doIteration(ElementTreeIterator.java:86)
+	at org.eclipse.core.internal.watson.ElementTreeIterator.doIteration(ElementTreeIterator.java:86)
+	at org.eclipse.core.internal.watson.ElementTreeIterator.doIteration(ElementTreeIterator.java:86)
+	at org.eclipse.core.internal.watson.ElementTreeIterator.iterate(ElementTreeIterator.java:127)
+	at org.eclipse.core.internal.resources.Resource.accept(Resource.java:95)
+	at org.eclipse.core.internal.resources.Resource.accept(Resource.java:52)
+	at org.eclipse.jdt.internal.core.builder.AbstractImageBuilder.addAllSourceFiles(AbstractImageBuilder.java:220)
+	at org.eclipse.jdt.internal.core.builder.BatchImageBuilder.build(BatchImageBuilder.java:51)
+	at org.eclipse.jdt.internal.core.builder.JavaBuilder.buildAll(JavaBuilder.java:254)
+	at org.eclipse.jdt.internal.core.builder.JavaBuilder.buildDeltas(JavaBuilder.java:270)
+	at org.eclipse.jdt.internal.core.builder.JavaBuilder.build(JavaBuilder.java:193)
+	at org.eclipse.core.internal.events.BuildManager$2.run(BuildManager.java:733)
+	at org.eclipse.core.runtime.SafeRunner.run(SafeRunner.java:42)
+	at org.eclipse.core.internal.events.BuildManager.basicBuild(BuildManager.java:206)
+	at org.eclipse.core.internal.events.BuildManager.basicBuild(BuildManager.java:246)
+	at org.eclipse.core.internal.events.BuildManager$1.run(BuildManager.java:299)
+	at org.eclipse.core.runtime.SafeRunner.run(SafeRunner.java:42)
+	at org.eclipse.core.internal.events.BuildManager.basicBuild(BuildManager.java:302)
+	at org.eclipse.core.internal.events.BuildManager.basicBuildLoop(BuildManager.java:358)
+	at org.eclipse.core.internal.events.BuildManager.build(BuildManager.java:381)
+	at org.eclipse.core.internal.events.AutoBuildJob.doBuild(AutoBuildJob.java:143)
+	at org.eclipse.core.internal.events.AutoBuildJob.run(AutoBuildJob.java:241)
+	at org.eclipse.core.internal.jobs.Worker.run(Worker.java:53)
+!SUBENTRY 1 org.eclipse.core.resources 4 275 2015-10-27 15:46:47.422
+!MESSAGE A resource exists with a different case: '/HelloAndroid/bin/formation/exemple/helloAndroid'.
+
+!ENTRY com.android.ide.eclipse.adt 4 0 2015-10-27 16:03:16.735
+!MESSAGE Failed to load properties file for project 'projet-java-yoric'
+
+!ENTRY com.android.ide.eclipse.adt 4 0 2015-10-27 16:03:16.790
+!MESSAGE Failed to load properties file for project 'projet-java-yoric'
+
+!ENTRY com.android.ide.eclipse.adt 4 0 2015-10-27 16:03:16.798
+!MESSAGE Failed to load properties file for project 'projet-java-yoric'
+
+!ENTRY com.android.ide.eclipse.adt 4 0 2015-10-27 16:03:16.806
+!MESSAGE Failed to call IProjectListener.projectRenamed
+!STACK 0
+java.lang.NullPointerException
+	at com.android.ide.eclipse.adt.internal.sdk.Sdk$1.projectRenamed(Unknown Source)
+	at com.android.ide.eclipse.adt.internal.resources.manager.GlobalProjectMonitor$DeltaVisitor.visit(Unknown Source)
+	at org.eclipse.core.internal.events.ResourceDelta.accept(ResourceDelta.java:69)
+	at org.eclipse.core.internal.events.ResourceDelta.accept(ResourceDelta.java:80)
+	at org.eclipse.core.internal.events.ResourceDelta.accept(ResourceDelta.java:49)
+	at com.android.ide.eclipse.adt.internal.resources.manager.GlobalProjectMonitor$1.resourceChanged(Unknown Source)
+	at org.eclipse.core.internal.events.NotificationManager$1.run(NotificationManager.java:291)
+	at org.eclipse.core.runtime.SafeRunner.run(SafeRunner.java:42)
+	at org.eclipse.core.internal.events.NotificationManager.notify(NotificationManager.java:285)
+	at org.eclipse.core.internal.events.NotificationManager.broadcastChanges(NotificationManager.java:149)
+	at org.eclipse.core.internal.resources.Workspace.broadcastPostChange(Workspace.java:396)
+	at org.eclipse.core.internal.resources.Workspace.checkpoint(Workspace.java:558)
+	at org.eclipse.ltk.core.refactoring.PerformChangeOperation$1.run(PerformChangeOperation.java:263)
+	at org.eclipse.core.internal.resources.Workspace.run(Workspace.java:2345)
+	at org.eclipse.ltk.core.refactoring.PerformChangeOperation.executeChange(PerformChangeOperation.java:306)
+	at org.eclipse.ltk.internal.ui.refactoring.UIPerformChangeOperation.executeChange(UIPerformChangeOperation.java:92)
+	at org.eclipse.ltk.core.refactoring.PerformChangeOperation.run(PerformChangeOperation.java:218)
+	at org.eclipse.core.internal.resources.Workspace.run(Workspace.java:2345)
+	at org.eclipse.ltk.internal.ui.refactoring.WorkbenchRunnableAdapter.run(WorkbenchRunnableAdapter.java:87)
+	at org.eclipse.jface.operation.ModalContext$ModalContextThread.run(ModalContext.java:121)
+
+!ENTRY com.android.ide.eclipse.adt 4 0 2015-10-27 16:03:16.869
+!MESSAGE Failed to load properties file for project 'projet-java-yoric'
+
+!ENTRY com.android.ide.eclipse.adt 4 0 2015-10-27 16:03:16.916
+!MESSAGE Failed to load properties file for project 'projet-java-yoric'
+
+!ENTRY com.android.ide.eclipse.adt 4 0 2015-10-27 16:03:17.675
+!MESSAGE Failed to load properties file for project 'projet-java-yoric'
+
+!ENTRY org.eclipse.core.resources 8 2 2015-10-27 16:03:17.684
+!MESSAGE Problems occurred when invoking code from plug-in: "org.eclipse.core.resources".
+!STACK 1
+org.eclipse.core.runtime.CoreException: Project target not resolved yet.
+	at com.android.ide.eclipse.adt.internal.build.builders.BaseBuilder.stopBuild(Unknown Source)
+	at com.android.ide.eclipse.adt.internal.build.builders.BaseBuilder.abortOnBadSetup(Unknown Source)
+	at com.android.ide.eclipse.adt.internal.build.builders.ResourceManagerBuilder.build(Unknown Source)
+	at org.eclipse.core.internal.events.BuildManager$2.run(BuildManager.java:733)
+	at org.eclipse.core.runtime.SafeRunner.run(SafeRunner.java:42)
+	at org.eclipse.core.internal.events.BuildManager.basicBuild(BuildManager.java:206)
+	at org.eclipse.core.internal.events.BuildManager.basicBuild(BuildManager.java:246)
+	at org.eclipse.core.internal.events.BuildManager$1.run(BuildManager.java:299)
+	at org.eclipse.core.runtime.SafeRunner.run(SafeRunner.java:42)
+	at org.eclipse.core.internal.events.BuildManager.basicBuild(BuildManager.java:302)
+	at org.eclipse.core.internal.events.BuildManager.basicBuildLoop(BuildManager.java:358)
+	at org.eclipse.core.internal.events.BuildManager.build(BuildManager.java:381)
+	at org.eclipse.core.internal.events.AutoBuildJob.doBuild(AutoBuildJob.java:143)
+	at org.eclipse.core.internal.events.AutoBuildJob.run(AutoBuildJob.java:241)
+	at org.eclipse.core.internal.jobs.Worker.run(Worker.java:53)
+!SUBENTRY 1 com.android.ide.eclipse.adt 8 0 2015-10-27 16:03:17.684
+!MESSAGE Project target not resolved yet.
+!SUBENTRY 1 com.android.ide.eclipse.adt 8 0 2015-10-27 16:03:17.685
+!MESSAGE Project target not resolved yet.
+
+!ENTRY com.android.ide.eclipse.adt 4 0 2015-10-27 16:03:17.696
+!MESSAGE Failed to load properties file for project 'projet-java-yoric'
+
+!ENTRY com.android.ide.eclipse.adt 4 0 2015-10-27 16:03:18.507
+!MESSAGE Failed to load properties file for project 'projet-java-yoric'
+
+!ENTRY com.android.ide.eclipse.adt 4 0 2015-10-27 16:03:18.525
+!MESSAGE Failed to load properties file for project 'projet-java-yoric'
+
+!ENTRY com.android.ide.eclipse.adt 4 0 2015-10-27 16:03:18.690
+!MESSAGE Failed to load properties file for project 'projet-java-yoric'
+
+!ENTRY org.eclipse.core.resources 8 2 2015-10-27 16:03:18.708
+!MESSAGE Problems occurred when invoking code from plug-in: "org.eclipse.core.resources".
+!STACK 1
+org.eclipse.core.runtime.CoreException: Project target not resolved yet.
+	at com.android.ide.eclipse.adt.internal.build.builders.BaseBuilder.stopBuild(Unknown Source)
+	at com.android.ide.eclipse.adt.internal.build.builders.BaseBuilder.abortOnBadSetup(Unknown Source)
+	at com.android.ide.eclipse.adt.internal.build.builders.ResourceManagerBuilder.build(Unknown Source)
+	at org.eclipse.core.internal.events.BuildManager$2.run(BuildManager.java:733)
+	at org.eclipse.core.runtime.SafeRunner.run(SafeRunner.java:42)
+	at org.eclipse.core.internal.events.BuildManager.basicBuild(BuildManager.java:206)
+	at org.eclipse.core.internal.events.BuildManager.basicBuild(BuildManager.java:246)
+	at org.eclipse.core.internal.events.BuildManager$1.run(BuildManager.java:299)
+	at org.eclipse.core.runtime.SafeRunner.run(SafeRunner.java:42)
+	at org.eclipse.core.internal.events.BuildManager.basicBuild(BuildManager.java:302)
+	at org.eclipse.core.internal.events.BuildManager.basicBuildLoop(BuildManager.java:358)
+	at org.eclipse.core.internal.events.BuildManager.build(BuildManager.java:381)
+	at org.eclipse.core.internal.events.AutoBuildJob.doBuild(AutoBuildJob.java:143)
+	at org.eclipse.core.internal.events.AutoBuildJob.run(AutoBuildJob.java:241)
+	at org.eclipse.core.internal.jobs.Worker.run(Worker.java:53)
+!SUBENTRY 1 com.android.ide.eclipse.adt 8 0 2015-10-27 16:03:18.708
+!MESSAGE Project target not resolved yet.
+!SUBENTRY 1 com.android.ide.eclipse.adt 8 0 2015-10-27 16:03:18.708
+!MESSAGE Project target not resolved yet.
+
+!ENTRY com.android.ide.eclipse.adt 4 0 2015-10-27 16:03:18.735
+!MESSAGE Failed to load properties file for project 'projet-java-yoric'
