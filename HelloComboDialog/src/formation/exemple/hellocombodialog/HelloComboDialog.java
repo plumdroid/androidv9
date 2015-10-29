@@ -3,7 +3,7 @@ package formation.exemple.hellocombodialog;
 import android.app.Activity;
 import android.os.Bundle;
 import android.widget.TextView;
-import formation.exemple.R;
+import formation.exemple.hellocombodialog.R;
 import plum.widget.ComboDialog;
 
 public class HelloComboDialog extends Activity implements

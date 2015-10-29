@@ -1,7 +1,7 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <section name="Workbench">
-	<item value="D:\hubiC\Workspace.Android\androidv9\Plum" key="org.eclipse.jdt.ui.lastextjar"/>
-	<item value="D:\hubiC\Workspace.Android\androidv9\PlumAndroidv1\PlumAndroidv1" key="org.eclipse.jdt.ui.last.external.project"/>
+	<item value="D:\hubiC\Workspace.Android\androidv9" key="org.eclipse.jdt.ui.lastextjar"/>
+	<item value="D:\hubiC\Workspace.Android\androidv9\PlumDroidPk\PlumDroidPk" key="org.eclipse.jdt.ui.last.external.project"/>
 	<section name="org.eclipse.ltk.ui.refactoring.settings">
 		<item value="true" key="renameSubpackages"/>
 		<item value="false" key="updateQualifiedNames"/>
@@ -45,7 +45,7 @@
 	<section name="quick_assist_proposal_size">
 	</section>
 	<section name="BuildPathsPropertyPage">
-		<item value="0" key="pageIndex"/>
+		<item value="2" key="pageIndex"/>
 	</section>
 	<section name="NewPackageWizardPage">
 		<item value="false" key="create_package_info_java"/>
@@ -72,6 +72,8 @@
 		<item value="false" key="JarManifestWizardPage.SAVE_MANIFEST"/>
 		<item value="false" key="JarPackageWizardPage.EXPORT_OUTPUT_FOLDER"/>
 		<list key="JarPackageWizardPage.DESTINATION_NAMES_ID">
+			<item value="D:\hubiC\Workspace.Android\androidv9\PlumDroidPk.jar"/>
+			<item value="D:\hubiC\Workspace.Android\androidv9\PlumAndroid.jar"/>
 			<item value="Plum\PlumAndroid.jar"/>
 			<item value="Plum/plum.webservice.database.jar"/>
 		</list>
