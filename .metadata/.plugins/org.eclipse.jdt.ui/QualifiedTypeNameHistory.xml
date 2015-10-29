@@ -1,6 +1,5 @@
 <?xml version="1.0" encoding="UTF-8" standalone="no"?>
 <qualifiedTypeNameHistroy>
-<fullyQualifiedTypeName name="java.io.IOException"/>
 <fullyQualifiedTypeName name="android.view.View"/>
 <fullyQualifiedTypeName name="android.hardware.Camera.PictureCallback"/>
 <fullyQualifiedTypeName name="android.widget.ImageView"/>
@@ -60,4 +59,5 @@
 <fullyQualifiedTypeName name="java.net.ConnectException"/>
 <fullyQualifiedTypeName name="java.net.UnknownServiceException"/>
 <fullyQualifiedTypeName name="plum.widget.ComboDialog"/>
+<fullyQualifiedTypeName name="plum.widget.MessageDialog"/>
 </qualifiedTypeNameHistroy>

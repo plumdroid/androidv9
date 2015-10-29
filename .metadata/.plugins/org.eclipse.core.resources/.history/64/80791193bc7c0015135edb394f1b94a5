@@ -1,0 +1,104 @@
+<?xml version="1.0" encoding="utf-8"?>
+ <LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
+              android:layout_width="fill_parent" 
+              android:layout_height="wrap_content" 
+                android:background="#80FF00"
+              android:orientation="vertical" >  
+<RelativeLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    android:layout_width="fill_parent"
+    android:layout_height="wrap_content"
+     android:padding="10px" >
+
+     <TextView
+        android:id="@+id/aftypeaf_label"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:textColor="#000000"
+        android:text="Type :"/>
+        <EditText
+        android:id="@+id/aftypeaf"
+        android:layout_width="100px"
+        android:layout_height="wrap_content"
+        android:layout_toRightOf="@id/aftypeaf_label"
+        android:layout_alignTop="@id/aftypeaf_label"
+        android:background="@android:drawable/editbox_background"
+       />
+       <TextView
+        android:id="@+id/afprix_label"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:textColor="#000000"
+        android:layout_toRightOf="@id/aftypeaf"
+        android:layout_alignTop="@id/aftypeaf"
+         android:paddingLeft="10dip"
+        android:text="Prix :"/>
+        <EditText
+        android:id="@+id/afprix"
+        android:layout_width="120px"
+        android:layout_height="wrap_content"
+        android:layout_toRightOf="@id/afprix_label"
+        android:layout_alignTop="@id/afprix_label"
+        android:inputType="number"
+        android:background="@android:drawable/editbox_background"
+       />
+        <TextView
+        android:id="@+id/afadr_label"
+        android:layout_below="@id/aftypeaf"
+        android:layout_width="60px"
+        android:layout_height="wrap_content"
+        android:textColor="#000000"
+         android:paddingTop="10dip"
+        android:text="Adresse:"/>
+        <EditText
+        android:id="@+id/afadr"
+        android:layout_width="250px"
+        android:layout_height="wrap_content"
+        android:layout_toRightOf="@id/afadr_label"
+        android:layout_alignTop="@id/afadr_label"
+        android:background="@android:drawable/editbox_background"
+       />
+       <TextView
+        android:id="@+id/afville_label"
+        android:layout_below="@id/afadr"
+        android:layout_width="60px"
+        android:layout_height="wrap_content"
+        android:textColor="#000000"
+         android:paddingTop="10dip"
+        android:text="Ville:"/>
+        <EditText
+        android:id="@+id/afville"
+        android:layout_width="250px"
+        android:layout_height="wrap_content"
+        android:layout_toRightOf="@id/afville_label"
+        android:layout_alignTop="@id/afville_label"
+        android:background="@android:drawable/editbox_background"
+       />
+   </RelativeLayout>
+   <LinearLayout
+		      android:orientation="vertical"
+		      android:layout_width="fill_parent"
+		      android:layout_height="fill_parent"
+		      > 
+		<RelativeLayout xmlns:android="http://schemas.android.com/apk/res/android"
+   			android:layout_width="fill_parent"
+    		android:layout_height="wrap_content"
+    		 android:background="#40A468"
+     		android:padding="10px" >
+         <Button
+    	android:id="@+id/afclose"
+        android:layout_width="80dip"
+        android:layout_height="wrap_content"
+         android:layout_alignParentRight="true"
+        android:text="Fermer" />
+         <Button
+        android:id="@+id/afadd"
+        android:layout_width="120dip"
+        android:layout_height="wrap_content"
+        android:layout_toLeftOf="@id/afclose"
+        android:layout_alignTop="@id/afclose"
+        android:layout_marginLeft="10dip"
+        android:text="Ajouter" />
+      </RelativeLayout>      
+	 </LinearLayout>
+ </LinearLayout>
+   

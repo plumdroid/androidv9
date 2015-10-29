@@ -2,12 +2,13 @@
 <section name="Workbench">
 	<section name="org.eclipse.ui.texteditor.FindReplaceDialog">
 		<item value="false" key="isRegEx"/>
-		<item value="" key="selection"/>
+		<item value="url" key="selection"/>
 		<item value="false" key="casesensitive"/>
 		<item value="false" key="incremental"/>
 		<item value="true" key="wrap"/>
 		<item value="false" key="wholeword"/>
 		<list key="findhistory">
+			<item value="http"/>
 			<item value="button_ajouter"/>
 			<item value="edit_execute"/>
 			<item value="edit_ajouter"/>
@@ -15,9 +16,9 @@
 			<item value="mytext"/>
 			<item value="imageView"/>
 			<item value="camera.startPreview()"/>
-			<item value="plusButton"/>
 		</list>
 		<list key="replacehistory">
+			<item value="url"/>
 			<item value="button_execute"/>
 			<item value="edit_sql"/>
 			<item value="edit_execute"/>
@@ -25,7 +26,6 @@
 			<item value="zoomButton"/>
 			<item value="212px"/>
 			<item value="pictureBitmap"/>
-			<item value="pictureImageView"/>
 		</list>
 	</section>
 	<section name="org.eclipse.ui.texteditor.FindReplaceDialog_dialogBounds">

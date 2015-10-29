@@ -12,11 +12,11 @@
 		<item value="false" key="WizardProjectsImportPage.STORE_COPY_PROJECT_ID"/>
 		<item value="false" key="WizardProjectsImportPage.STORE_ARCHIVE_SELECTED"/>
 		<list key="WizardProjectsImportPage.STORE_DIRECTORIES">
+			<item value="D:\hubiC\Workspace.Android\androidv9"/>
+			<item value="D:\hubiC\Workspace.Android\androidv9\HelloEditText"/>
+			<item value="D:\hubiC\Workspace.Android\androidv9\HelloDatePicker"/>
 			<item value="D:\hubiC\Workspace.Android\androidv9\Berthelet_Delous_Toutou"/>
 			<item value="D:\hubiC\Workspace.Android\androidv9\Condro_Richard_Toutou"/>
-			<item value="D:\hubiC\Workspace.Android\androidv9\FrugierGrassaudToutou"/>
-			<item value="D:\hubiC\Workspace.Android\androidv9\Joly_Brousseaud_TOUTOU"/>
-			<item value="D:\hubiC\Workspace.Android\androidv9\Penin_TOUTOU"/>
 		</list>
 		<list key="WizardProjectsImportPage.STORE_ARCHIVES">
 			<item value=""/>
