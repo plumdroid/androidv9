@@ -12,8 +12,6 @@ import android.widget.ListView;
 import android.widget.SimpleCursorAdapter;
 import android.widget.Toast;
 import formation.exemple.helloplumdatabase.R;
-import formation.exemple.helloplumdatabase.R.id;
-import formation.exemple.helloplumdatabase.R.layout;
 import android.database.Cursor;
 
 public class HelloPlumDataBase extends Activity 
@@ -147,6 +145,13 @@ public void onClick(View v) {
     	} 	
 		
 		if(pr.pdo.error==0){
+			
+			if(pr.pdo.rowCount==0){//aucune ligne dans la table
+				Toast.makeText(getApplicationContext(),
+						"QUERY : table vide", Toast.LENGTH_LONG).show();
+				break;
+			}
+			
 			//afficher la liste
 		
 	    	Cursor c=pr.pdo.cursor;

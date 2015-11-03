@@ -2,4 +2,5 @@
 <resources>
     <string name="app_name">HelloPlumDataBase</string>
     <string name="hello">Hello World, test de PlumDataBase!</string>
+    <string name="no_notes">Table test vide</string>
 </resources>
