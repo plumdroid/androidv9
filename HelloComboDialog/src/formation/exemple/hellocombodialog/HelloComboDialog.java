@@ -16,18 +16,23 @@ ComboDialog.OnClickComboDialogListener {
         setContentView(R.layout.main);
         
         /** mise en lace du combo sur un TextView*/
-        TextView myItem=(TextView)findViewById(R.id.item);
+        /** Le 'ComboDialog' affichera dans TextView le libellé (item) choisi par l'utilisateur*/
+        TextView myTextViewItem=(TextView)findViewById(R.id.item);
+        
         final CharSequence[] items={"Rouge","Vert","Bleu"};
     	final CharSequence[] values={"1","2","3"};
-    	comboCouleur = new ComboDialog("Choisir une couleur",items,values,myItem,this);
+    	comboCouleur = new ComboDialog("Choisir une couleur",items,values,myTextViewItem,this);
+    	
     	//activivé l'écouteur OnClick
     	comboCouleur.setOnClickComboDialogListener(this);
+    	
     }
     
     //// Evènements ////
+    //sur choix dans ComboDialog on affiche l'id (value) correspondant au choix réalisé 
     public void onClickComboDialog()
     {	
-		TextView myValue=(TextView)findViewById(R.id.value);
-		myValue.setText(comboCouleur.value(comboCouleur.getIndexSelected()));
+		TextView myTextViewValue=(TextView)findViewById(R.id.value);
+		myTextViewValue.setText(comboCouleur.value(comboCouleur.getIndexSelected()));
     }
 }

@@ -23,6 +23,5 @@ View.OnClickListener {
     //// Evènements ////
     public void onClick(View v) {
 		MessageDialog.show(this,"Bonjour Thierry","Fermer");
-		int a=1;
 		}
 }

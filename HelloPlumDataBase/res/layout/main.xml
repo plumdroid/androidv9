@@ -10,8 +10,27 @@
     android:text="@string/hello"
     />
  
+ <TextView  
+    android:layout_width="fill_parent" 
+    android:layout_height="wrap_content" 
+    android:text="SQL : select * from table where _id=?"
+    />
+    
    <EditText
     android:id="@+id/edit_sql"
+    android:layout_width="fill_parent" 
+    android:layout_height="wrap_content" 
+    android:text=""
+    />
+    
+    <TextView  
+    android:layout_width="fill_parent" 
+    android:layout_height="wrap_content" 
+    android:text="Valeur(s) : 10;test"
+    />
+    
+   <EditText
+    android:id="@+id/edit_data"
     android:layout_width="fill_parent" 
     android:layout_height="wrap_content" 
     android:text=""

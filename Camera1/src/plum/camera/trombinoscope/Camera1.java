@@ -160,7 +160,9 @@ public class Camera1 extends Activity
     	super.onRestart();
     }
 
-    protected void onResume(){super.onResume();}
+    protected void onResume(){
+    	super.onResume();
+    }
 
     protected void onPause(){
     	super.onPause();

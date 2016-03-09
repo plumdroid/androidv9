@@ -70,14 +70,44 @@ public class PlumDataBase {
 		return new PlumDataBaseReponse(jsonReponse);
 	}
 	
-	/*
-	 * Execute SQL
-	 *
-	 * @return 
-	 */
+	/**
+     * Execute SQL
+     *
+     *
+     * @param sql	 					Une requête sql
+     * @return 							objet PlumDataBaseReponse
+     */
 	public PlumDataBaseReponse execute(String sql) throws PlumDataBaseException {
 		 ArrayList<NameValuePair> params=new ArrayList<NameValuePair>();
 		 params.add(new BasicNameValuePair("requete",sql));
+		 
+		 
+		 String http=url+"webservice/execute/";
+		 JSONObject jsonReponse=httpWebService(http,params);
+			
+		 return new PlumDataBaseReponse(jsonReponse);
+		 
+	}
+	
+	/**
+     * Execute SQL
+     *
+     *
+     * @param sql	 					Une requête sql avec jeton '?' ; par exemple "insert into table VALUES(?,?)"
+	 * @param data     					un tableau avec les données remplaçant chaque jeton
+     * @return 							objet PlumDataBaseReponse
+     */
+	
+	public PlumDataBaseReponse execute(String sql, String[] data) throws PlumDataBaseException {
+		 ArrayList<NameValuePair> params=new ArrayList<NameValuePair>();
+		 params.add(new BasicNameValuePair("requete",sql));
+		 
+		 int i=0;
+		 for(String unedata : data){
+			 String key="data[" + i + "]"; //data[0]....
+			 params.add(new BasicNameValuePair(key,unedata));
+			 i++;
+		 }
 		 
 		 String http=url+"webservice/execute/";
 		 JSONObject jsonReponse=httpWebService(http,params);
@@ -87,14 +117,41 @@ public class PlumDataBase {
 	}
 
 	
-	/*
-	 * Query SQL on retourne également la liste des données lues
-	 *
-	 * @return 
-	 */
+	/**
+     * Query SQL on retourne également la liste des données lues
+     *
+     *
+     * @param sql	 					Une requête sql
+     * @return 							objet PlumDataBaseReponse
+     */
 	public PlumDataBaseReponse query(String sql) throws PlumDataBaseException {
 		 ArrayList<NameValuePair> params=new ArrayList<NameValuePair>();
 		 params.add(new BasicNameValuePair("requete",sql));
+		 
+		 String http=url+"webservice/query/";
+		 JSONObject jsonReponse=httpWebService(http,params);
+			
+		 return new PlumDataBaseReponse(jsonReponse);
+	}
+	
+	/**
+     * Query SQL on retourne également la liste des données lues
+     *
+     *
+     * @param sql	 					Une requête sql avec jeton '?' ; par exemple "select * from table where id=?"
+	 * @param data     					un tableau avec les données remplaçant chaque jeton
+     * @return 							objet PlumDataBaseReponse
+     */
+	public PlumDataBaseReponse query(String sql, String[] data) throws PlumDataBaseException {
+		 ArrayList<NameValuePair> params=new ArrayList<NameValuePair>();
+		 params.add(new BasicNameValuePair("requete",sql));
+
+		 int i=0;
+		 for(String unedata : data){
+			 String key="data[" + i + "]"; //data[0]....
+			 params.add(new BasicNameValuePair(key,unedata));
+			 i++;
+		 }
 		 
 		 String http=url+"webservice/query/";
 		 JSONObject jsonReponse=httpWebService(http,params);
