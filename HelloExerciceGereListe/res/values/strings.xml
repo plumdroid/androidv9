@@ -1,0 +1,6 @@
+<?xml version="1.0" encoding="utf-8"?>
+<resources>
+    <string name="app_name">HelloExerciceGereListe</string>
+    <string name="hello">Hello World, HelloExerciceGereListe!</string>
+     <string name="no_notes">Aucun pays</string>
+</resources>
