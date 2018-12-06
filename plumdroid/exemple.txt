@@ -1,0 +1,30 @@
+public class MainActivity extends AppCompatActivity implements ComboDialog.OnClickComboDialogListener {
+
+    @Override
+    protected void onCreate(Bundle savedInstanceState) {
+        super.onCreate(savedInstanceState);
+        setContentView(R.layout.activity_main);
+
+        TestLib t = new TestLib();
+
+        TextView m=(TextView)findViewById(R.id.label);
+
+        m.setText(t.toString());
+
+        CharSequence items[] = {"OUI", "NON"};
+        CharSequence value[] = {"1", "2"};
+        ComboDialog combo = new ComboDialog("Test Combo",items,value,null,this);
+
+        combo.setOnClickComboDialogListener(this);
+        combo.show();
+    }
+
+    @Override
+    public void onClickComboDialog(ComboDialog comboDialog) {
+        Toast toast = Toast.makeText(getApplicationContext(),
+                comboDialog.item(comboDialog.getIndexSelected()),
+                Toast.LENGTH_LONG);
+        toast.show();
+
+    }
+}
