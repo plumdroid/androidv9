@@ -1,4 +1,0 @@
-<?xml version="1.0" encoding="UTF-8"?>
-<session version="1.0">
-<refactoring comment="Move package &apos;formation.widget&apos; to &apos;Plum/src&apos;&#x0D;&#x0A;- Original project: &apos;HelloMessageDialog&apos;&#x0D;&#x0A;- Destination element: &apos;Plum/src&apos;&#x0D;&#x0A;- Original element: &apos;HelloMessageDialog/src/formation.widget&apos;&#x0D;&#x0A;- Update references to refactored element" description="Move package" destination="=Plum/src" element1="/src&lt;formation.widget" flags="589830" fragments="1" id="org.eclipse.jdt.ui.move" policy="org.eclipse.jdt.ui.movePackages" stamp="1415704270855" version="1.0"/>
-</session>
